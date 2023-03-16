@@ -1,0 +1,223 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 7,
+    "passes": 7,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-03-16T22:19:46.922Z",
+    "end": "2023-03-16T22:19:51.064Z",
+    "duration": 4142,
+    "testsRegistered": 7,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "2ba59464-a907-4b1c-b611-8e7f8440eb6a",
+      "title": "",
+      "fullFile": "cypress/e2e/smokeTest/cartpageTest/cartpageTest.spec.js",
+      "file": "cypress/e2e/smokeTest/cartpageTest/cartpageTest.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "0c29984e-e1e0-4b8c-bfbd-a50c76bcf85a",
+          "title": "Verify 'Cart' page functionalities",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Verify user able to add product in the cart",
+              "fullTitle": "Verify 'Cart' page functionalities Verify user able to add product in the cart",
+              "timedOut": null,
+              "duration": 54,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// 1. Go to Tamice.com\n// 2. Hove over 'Package Tour' from the navigation bar\n// 3. Click 'NY Big Apple Pass'\n// 4. Add products\n// 5. Go to 'Cart' page\n// 6. Verify product is in the 'Cart' page",
+              "err": {},
+              "uuid": "8a41bcca-bab7-4d26-aa11-7e2260339843",
+              "parentUUID": "0c29984e-e1e0-4b8c-bfbd-a50c76bcf85a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "User able to subtract product quantity from the '티켓구입' field",
+              "fullTitle": "Verify 'Cart' page functionalities User able to subtract product quantity from the '티켓구입' field",
+              "timedOut": null,
+              "duration": 1486,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//1. Go to Tamice.com\ncy.visit(Cypress.env(\"url\"));\n//2. Hove over \"Package Tour\" from the navigation bar\ncy.contains(\"Package Tour\").invoke(\"show\").should(\"be.visible\");\n//3. Get first li 'NY Big Apple Pass' from the hidden box\ncy.get(\"li\").first().should(\"have.text\", \"NY Big Apple Pass\").click({\n  force: true\n});\n//4. Go to \"티켓구입\" box and click \"+\" button two times\nfor (let n = 1; n < 3; n++) {\n  cy.xpath(\"/html[1]/body[1]/div[1]/div[1]/div[3]/div[1]/div[3]/div[1]/div[1]/div[2]/div[1]/div[3]/div[5]/div[2]/img[2]\").click();\n}\n//5. Check quantity equals to 3\ncy.xpath(\"/html[1]/body[1]/div[1]/div[1]/div[3]/div[1]/div[3]/div[1]/div[1]/div[2]/div[1]/div[3]/div[5]/div[2]\").should(\"have.text\", \"3\");\n//6. Click \"2\" button until 1\ncy.xpath(\"/html[1]/body[1]/div[1]/div[1]/div[3]/div[1]/div[3]/div[1]/div[1]/div[2]/div[1]/div[3]/div[5]/div[2]/img[1]\").click();\ncy.xpath(\"/html[1]/body[1]/div[1]/div[1]/div[3]/div[1]/div[3]/div[1]/div[1]/div[2]/div[1]/div[3]/div[5]/div[2]/img[1]\").click();\n//7. Check quantity equals to 1\ncy.xpath(\"/html[1]/body[1]/div[1]/div[1]/div[3]/div[1]/div[3]/div[1]/div[1]/div[2]/div[1]/div[3]/div[5]/div[2]\").should(\"have.text\", \"1\");",
+              "err": {},
+              "uuid": "dab1f470-612a-4a27-bba7-457edd2a2ab0",
+              "parentUUID": "0c29984e-e1e0-4b8c-bfbd-a50c76bcf85a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "User able to add product quantity from the '티켓구입' field",
+              "fullTitle": "Verify 'Cart' page functionalities User able to add product quantity from the '티켓구입' field",
+              "timedOut": null,
+              "duration": 1065,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// 1. Go to Tamice.com\ncy.visit(Cypress.env(\"url\"));\n// 2. Hove over 'Package Tour' from the navigation bar\ncy.contains(\"Package Tour\").invoke(\"show\").should(\"be.visible\");\n// 3. Get first li 'NY Big Apple Pass' from the hidden box\ncy.get(\"li\").first().should(\"have.text\", \"NY Big Apple Pass\").click({\n  force: true\n});\n// 4. Click '+' button until 4\nfor (let n = 1; n < 4; n++) {\n  cy.xpath(\"/html[1]/body[1]/div[1]/div[1]/div[3]/div[1]/div[3]/div[1]/div[1]/div[2]/div[1]/div[3]/div[5]/div[2]/img[2]\").click();\n}\n// 5. Check quantity equals to 4\ncy.xpath(\"/html[1]/body[1]/div[1]/div[1]/div[3]/div[1]/div[3]/div[1]/div[1]/div[2]/div[1]/div[3]/div[5]/div[2]\").should(\"have.text\", \"4\");",
+              "err": {},
+              "uuid": "187259c6-b3d9-4baf-bf73-0fb0e89a75ff",
+              "parentUUID": "0c29984e-e1e0-4b8c-bfbd-a50c76bcf85a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify user able to see product detail after clicking tour list",
+              "fullTitle": "Verify 'Cart' page functionalities Verify user able to see product detail after clicking tour list",
+              "timedOut": null,
+              "duration": 43,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// 1. Go to Tamice.com\n// 2. Hove over 'Package Tour' from the navigation bar\n// 3. Click 'NY Big Apple Pass'\n// 4. Add products\n// 5. Go to 'Cart' page\n// 6. Click tour list\n// 7. Verify user able to see product detail",
+              "err": {},
+              "uuid": "2fdd7231-b5ec-4fa7-98e6-85820db749b5",
+              "parentUUID": "0c29984e-e1e0-4b8c-bfbd-a50c76bcf85a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify user able to continue checkout",
+              "fullTitle": "Verify 'Cart' page functionalities Verify user able to continue checkout",
+              "timedOut": null,
+              "duration": 36,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// 1. Go to Tamice.com\n// 2. Hove over 'Package Tour' from the navigation bar\n// 3. Click 'NY Big Apple Pass'\n// 4. Add products\n// 5. Go to 'Cart' page\n// 6. Click Proceed Checkout",
+              "err": {},
+              "uuid": "a00aba4b-62c5-4dd4-b5fe-ccd84c41e440",
+              "parentUUID": "0c29984e-e1e0-4b8c-bfbd-a50c76bcf85a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify user able to checkout as guest",
+              "fullTitle": "Verify 'Cart' page functionalities Verify user able to checkout as guest",
+              "timedOut": null,
+              "duration": 51,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// 1. Go to Tamice.com\n// 2. Hove over 'Package Tour' from the navigation bar\n// 3. Click 'NY Big Apple Pass'\n// 4. Add products\n// 5. Go to Cart Page\n// 6. Click 'Proceed Checkout' button\n// 7. Click 'Guest Checkout' button\n// 8. Click 'Proceed Checkout' button",
+              "err": {},
+              "uuid": "d5e55947-5834-4eff-b439-be7ea7556f8b",
+              "parentUUID": "0c29984e-e1e0-4b8c-bfbd-a50c76bcf85a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify user able to checkout with valid credit/debit card",
+              "fullTitle": "Verify 'Cart' page functionalities Verify user able to checkout with valid credit/debit card",
+              "timedOut": null,
+              "duration": 40,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// 1. Go to Tamice.com\n// 2. Hove over 'Package Tour' from the navigation bar\n// 3. Click 'NY Big Apple Pass'\n// 4. Add products\n// 5. Go to 'Cart' page\n// 6. Click Proceed Checkout\n// 7. Click 'Login/Sign Up' button\n// 8. Type valid debit/credit card information\n// 9. Click 'Proceed Checkout' button\n// 10. Verify user able to checkout with valid credit/debit card",
+              "err": {},
+              "uuid": "751101a0-135e-4094-896b-54c2a8e009b9",
+              "parentUUID": "0c29984e-e1e0-4b8c-bfbd-a50c76bcf85a",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "8a41bcca-bab7-4d26-aa11-7e2260339843",
+            "dab1f470-612a-4a27-bba7-457edd2a2ab0",
+            "187259c6-b3d9-4baf-bf73-0fb0e89a75ff",
+            "2fdd7231-b5ec-4fa7-98e6-85820db749b5",
+            "a00aba4b-62c5-4dd4-b5fe-ccd84c41e440",
+            "d5e55947-5834-4eff-b439-be7ea7556f8b",
+            "751101a0-135e-4094-896b-54c2a8e009b9"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2775,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "[status]_[datetime]_[name]-report",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "code": true,
+        "charts": true,
+        "reportDir": "cypress/report/mochawesome-report",
+        "reportFilename": "[status]_[datetime]_[name]-report",
+        "timestamp": "m/d/yyyy/hTT",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
