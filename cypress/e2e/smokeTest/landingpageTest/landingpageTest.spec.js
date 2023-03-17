@@ -108,8 +108,7 @@ describe("Verify 'Landing' page functionalities", function () {
     //3. Verify user redirected to 'Sign up'page
     cy.url().should("include", "user/sign-up");
   });
-  it("Verify '
-     ' button on landing page redirected to 'Logo' page", function () {
+  it("Verify 'Logo' button on landing page redirected to 'Logo' page", function () {
     //1. Go to Tamice.com
     cy.visit(Cypress.env("url"));
     //2. Click Tamice.com logo button
