@@ -1,0 +1,166 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-03-17T00:56:24.445Z",
+    "end": "2023-03-17T00:56:24.730Z",
+    "duration": 285,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "4462c77d-4e49-4311-b381-50e02722a629",
+      "title": "",
+      "fullFile": "cypress/e2e/smokeTest/myaccountpageTest/myaccountpageTest.spec.js",
+      "file": "cypress/e2e/smokeTest/myaccountpageTest/myaccountpageTest.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "eb0d1f55-b96e-429f-ac03-d76e50df4fe7",
+          "title": "Verify 'My Account' page functionalities",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Verify user able to edit profile",
+              "fullTitle": "Verify 'My Account' page functionalities Verify user able to edit profile",
+              "timedOut": null,
+              "duration": 51,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// 1. Go to Tamice.com\n// 2. Click human icon\n// 3. Click 'My Account' button under 'My Account' list\n// 4. Click 'edit' button\n// 5. Verify user able to edit profile",
+              "err": {},
+              "uuid": "0d2658aa-454e-4fb2-97de-1ba5fcaf8f14",
+              "parentUUID": "eb0d1f55-b96e-429f-ac03-d76e50df4fe7",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify user able to change phone number",
+              "fullTitle": "Verify 'My Account' page functionalities Verify user able to change phone number",
+              "timedOut": null,
+              "duration": 51,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// 1. Go to Tamice.com\n// 2. Click human icon\n// 3. Click 'My Account' button under 'My Account' list\n// 4. Click 'edit' button\n// 5. Type valid phone number\n// 6. Verify user able to change phone number",
+              "err": {},
+              "uuid": "e2b996ca-3ff6-4660-999d-8c0ae7efbb84",
+              "parentUUID": "eb0d1f55-b96e-429f-ac03-d76e50df4fe7",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify user able to change password",
+              "fullTitle": "Verify 'My Account' page functionalities Verify user able to change password",
+              "timedOut": null,
+              "duration": 58,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// 1. Go to Tamice.com\n// 2. Click human icon\n// 3. Click 'My Account' button under 'My Account' list\n// 4. Click 'edit' button\n// 5. Type valid credential\n// 6. Verify user able to change password",
+              "err": {},
+              "uuid": "01d0f7ef-7071-4ca3-aea4-de685fc93d39",
+              "parentUUID": "eb0d1f55-b96e-429f-ac03-d76e50df4fe7",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify user able to delete account",
+              "fullTitle": "Verify 'My Account' page functionalities Verify user able to delete account",
+              "timedOut": null,
+              "duration": 64,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// 1. Go to Tamice.com\n// 2. Click human icon\n// 3. Click 'My Account' button under 'My Account' list\n// 4. Click 'Delete Account'\n// 5. User land delete confirmation page\n// 6. Click 'Delete Account' button\n// 7. Verify user able to delete account",
+              "err": {},
+              "uuid": "802bc143-59ca-4940-a7bd-d536d57948ba",
+              "parentUUID": "eb0d1f55-b96e-429f-ac03-d76e50df4fe7",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "0d2658aa-454e-4fb2-97de-1ba5fcaf8f14",
+            "e2b996ca-3ff6-4660-999d-8c0ae7efbb84",
+            "01d0f7ef-7071-4ca3-aea4-de685fc93d39",
+            "802bc143-59ca-4940-a7bd-d536d57948ba"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 224,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "[status]_[datetime]_[name]-report",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "code": true,
+        "charts": true,
+        "reportDir": "cypress/report/mochawesome-report",
+        "reportFilename": "[status]_[datetime]_[name]-report",
+        "timestamp": "m/d/yyyy/hTT",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

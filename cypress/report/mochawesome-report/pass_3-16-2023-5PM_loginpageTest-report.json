@@ -1,0 +1,185 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 5,
+    "passes": 5,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-03-17T00:56:00.281Z",
+    "end": "2023-03-17T00:56:00.637Z",
+    "duration": 356,
+    "testsRegistered": 5,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "e7bf5520-b856-40e1-9857-903b3c9817ce",
+      "title": "",
+      "fullFile": "cypress/e2e/smokeTest/loginpageTest/loginpageTest.spec.js",
+      "file": "cypress/e2e/smokeTest/loginpageTest/loginpageTest.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "76063075-b688-4b1b-86b4-882a615bdfef",
+          "title": "Verify 'Login' page functionalities",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Verify forgot password functionality",
+              "fullTitle": "Verify 'Login' page functionalities Verify forgot password functionality",
+              "timedOut": null,
+              "duration": 73,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// 1. Go to Tamice.com\n// 2. Click 'Login/Sign Up' button\n// 3. Click 'Forgot Password' button\n// 4. Type valid 'User email'\n// 5. Click 'Reset Password' button\n// 7. Go to user email and verify user receive reset password link",
+              "err": {},
+              "uuid": "2862a669-666e-4b55-9b52-89b0f4ef2c82",
+              "parentUUID": "76063075-b688-4b1b-86b4-882a615bdfef",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify login functionality",
+              "fullTitle": "Verify 'Login' page functionalities Verify login functionality",
+              "timedOut": null,
+              "duration": 52,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// 1. Go to Tamice.com\n// 2. Click 'Login/Sign Up' button\n// 3. Type valid credential\n// 4. Click 'Sign in' button",
+              "err": {},
+              "uuid": "72073413-b326-475d-8706-45a939e1edc6",
+              "parentUUID": "76063075-b688-4b1b-86b4-882a615bdfef",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify Google login functionality",
+              "fullTitle": "Verify 'Login' page functionalities Verify Google login functionality",
+              "timedOut": null,
+              "duration": 50,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// 1. Go to Tamice.com\n// 2. Click 'Login/Sign Up' button\n// 3. Click 'Google Login' button\n// 4. Choose user id\n// 5. Verify user able to login with google account",
+              "err": {},
+              "uuid": "97c05655-c2fb-468e-bbf0-21f563234184",
+              "parentUUID": "76063075-b688-4b1b-86b4-882a615bdfef",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify Naver login functionality",
+              "fullTitle": "Verify 'Login' page functionalities Verify Naver login functionality",
+              "timedOut": null,
+              "duration": 60,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// 1. Go to Tamice.com\n// 2. Click 'Login/Sign Up' button\n// 3. Click 'Naver Login' button\n// 4. Choose user id\n// 5. Verify user able to login with naver account",
+              "err": {},
+              "uuid": "82bd19f9-1498-419d-a170-0374b209b537",
+              "parentUUID": "76063075-b688-4b1b-86b4-882a615bdfef",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify create 'Non-Member ticket look up' functionality",
+              "fullTitle": "Verify 'Login' page functionalities Verify create 'Non-Member ticket look up' functionality",
+              "timedOut": null,
+              "duration": 56,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// 1. Go to Tamice.com\n// 2. Click 'Login/Sign Up' button\n// 3. Click 'Non-Member ticket lookup' button\n// 4. Type valid 'User email'\n// 5. Type valid user 'Order number'\n// 5. Click 'Order Lookup' button\n// 7. Verify user able see orders in the 'My booking' page",
+              "err": {},
+              "uuid": "7e8759ff-0ec7-4f85-b0c9-67c9919c4118",
+              "parentUUID": "76063075-b688-4b1b-86b4-882a615bdfef",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "2862a669-666e-4b55-9b52-89b0f4ef2c82",
+            "72073413-b326-475d-8706-45a939e1edc6",
+            "97c05655-c2fb-468e-bbf0-21f563234184",
+            "82bd19f9-1498-419d-a170-0374b209b537",
+            "7e8759ff-0ec7-4f85-b0c9-67c9919c4118"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 291,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "[status]_[datetime]_[name]-report",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "code": true,
+        "charts": true,
+        "reportDir": "cypress/report/mochawesome-report",
+        "reportFilename": "[status]_[datetime]_[name]-report",
+        "timestamp": "m/d/yyyy/hTT",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
