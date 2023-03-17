@@ -1,11 +1,20 @@
 version: 2.1
+
 orbs:
-  cypress: cypress-io/cypress@3
+  node: circleci/node@x.y
+
+jobs:
+  install-node-example:
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - checkout
+      - node/install:
+          install-yarn: true
+          node-version: '16.13'
+      - run: node --version
 workflows:
-  test:
+  test_my_app:
     jobs:
-      - cypress/run:
-          install-browsers: true
-          start-command: 'npm run start'
-          cypress-command: 'npx cypress run --browser chrome'
-   
+      - install-node-example
+
