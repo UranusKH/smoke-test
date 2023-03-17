@@ -6,5 +6,16 @@ workflows:
     jobs:
       - cypress/run:
           cypress-command: 'npx cypress run'
+          start-command: 'npx mochawesome-merge cypress/report/mochawesome-report/*.json > cypress/report/combine-report/$(date +"%m-%d-%Y")_final-result.json'
+          
+          
+
+  
+
+    
+      
+          
+
+
           
 
