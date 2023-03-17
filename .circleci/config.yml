@@ -7,7 +7,6 @@ workflows:
       - cypress/run:
           install-browsers: true
           cypress-command: 'npx cypress run --browser chrome',
-          second: 'npx mochawesome-merge cypress/report/mochawesome-report/*.json > cypress/report/combine-report/$(date +"%m-%d-%Y")_final-result.json',
-          third: 'npx marge cypress/report/combine-report/$(date +"%m-%d-%Y")_final-result.json -o cypress/report/final-report --inline'
+         
           
 
