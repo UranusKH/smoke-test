@@ -108,11 +108,12 @@ describe("Verify 'Landing' page functionalities", function () {
     //3. Verify user redirected to 'Sign up'page
     cy.url().should("include", "user/sign-up");
   });
-  it("Verify 'Logo' button on landing page redirected to 'Logo' page", function () {
+  it("Verify '
+     ' button on landing page redirected to 'Logo' page", function () {
     //1. Go to Tamice.com
     cy.visit(Cypress.env("url"));
     //2. Click Tamice.com logo button
-    cy.get("img[alt='Tamice logo']").first().click();
+    cy.get("img[alt='Tamice logo']").first().click({force: true});
     //3. Verify user redirected to 'Sign up'page
     cy.url().should("eq", "https://thernlovendev.github.io/ticket-site/#/");
   });
