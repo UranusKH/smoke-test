@@ -129,9 +129,13 @@ describe("Verify 'Landing' page functionalities", function () {
   });
   it("Verify user able to land 'My Bookings' page after click 'My booking' button under 'My Account' list", function () {
     // 1. Go to Tamice.com
+    cy.visit(Cypress.env("url"));
     // 2. Click human icon
+    cy.get("img[alt='/ticket-site/assets/icons/profile.svg']").click()
     // 3. Click 'My booking' button under 'My Account' list
+    cy.xpath('/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]').contains('My Account').click()
     // 4. Verify user able to land 'My Bookings' page after click 'My Booking' button under 'My Account' lists
+    cy.url().should("eq", "https://thernlovendev.github.io/ticket-site/#/user/my-account");
   });
   it("Verify user able to land 'My Account' page after click 'My Account' button", function () {
     // 1. Go to Tamice.com
