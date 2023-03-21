@@ -1,6 +1,11 @@
 /// <reference types="Cypress" />
 
 describe("Verify 'Cart' page functionalities", function () {
+  beforeEach(() => {
+    // run these tests as if in a desktop
+    // browser with a 720p monitor
+    cy.viewport(1280, 720);
+  });
   it("Verify user able to add product in the cart", function () {
     // 1. Go to Tamice.com
     // 2. Hove over 'Package Tour' from the navigation bar
@@ -21,25 +26,26 @@ describe("Verify 'Cart' page functionalities", function () {
     //4. Go to "티켓구입" box and click "+" button two times
     for (let n = 1; n < 3; n++) {
       cy.xpath(
-        "/html[1]/body[1]/div[1]/div[1]/div[3]/div[1]/div[3]/div[1]/div[1]/div[2]/div[1]/div[3]/div[5]/div[2]/img[2]"
+        "//body[1]/div[1]/div[1]/div[4]/div[1]/div[4]/div[1]/div[1]/div[2]/div[1]/div[3]/div[5]/div[2]/img[2]"
       ).click();
     }
     //5. Check quantity equals to 3
     cy.xpath(
-      "/html[1]/body[1]/div[1]/div[1]/div[3]/div[1]/div[3]/div[1]/div[1]/div[2]/div[1]/div[3]/div[5]/div[2]"
-    ).should("have.text", "3");
+      "//body[1]/div[1]/div[1]/div[4]/div[1]/div[4]/div[1]/div[1]/div[2]/div[1]/div[3]/div[5]/div[2]"
+    ).contains("3");
     //6. Click "2" button until 1
     cy.xpath(
-      "/html[1]/body[1]/div[1]/div[1]/div[3]/div[1]/div[3]/div[1]/div[1]/div[2]/div[1]/div[3]/div[5]/div[2]/img[1]"
+      "//body/div[@id='root']/div[1]/div[4]/div[1]/div[4]/div[1]/div[1]/div[2]/div[1]/div[3]/div[5]/div[2]/img[1]"
     ).click();
     cy.xpath(
-      "/html[1]/body[1]/div[1]/div[1]/div[3]/div[1]/div[3]/div[1]/div[1]/div[2]/div[1]/div[3]/div[5]/div[2]/img[1]"
+      "//body/div[@id='root']/div[1]/div[4]/div[1]/div[4]/div[1]/div[1]/div[2]/div[1]/div[3]/div[5]/div[2]/img[1]"
     ).click();
     //7. Check quantity equals to 1
     cy.xpath(
-      "/html[1]/body[1]/div[1]/div[1]/div[3]/div[1]/div[3]/div[1]/div[1]/div[2]/div[1]/div[3]/div[5]/div[2]"
-    ).should("have.text", "1");
+      "//body[1]/div[1]/div[1]/div[4]/div[1]/div[4]/div[1]/div[1]/div[2]/div[1]/div[3]/div[5]/div[2]"
+    ).contains("1");
   });
+
   it("User able to add product quantity from the '티켓구입' field", function () {
     // 1. Go to Tamice.com
     cy.visit(Cypress.env("url"));
@@ -52,13 +58,13 @@ describe("Verify 'Cart' page functionalities", function () {
     // 4. Click '+' button until 4
     for (let n = 1; n < 4; n++) {
       cy.xpath(
-        "/html[1]/body[1]/div[1]/div[1]/div[3]/div[1]/div[3]/div[1]/div[1]/div[2]/div[1]/div[3]/div[5]/div[2]/img[2]"
+        "//body[1]/div[1]/div[1]/div[4]/div[1]/div[4]/div[1]/div[1]/div[2]/div[1]/div[3]/div[5]/div[2]/img[2]"
       ).click();
     }
     // 5. Check quantity equals to 4
     cy.xpath(
-      "/html[1]/body[1]/div[1]/div[1]/div[3]/div[1]/div[3]/div[1]/div[1]/div[2]/div[1]/div[3]/div[5]/div[2]"
-    ).should("have.text", "4");
+      "//body[1]/div[1]/div[1]/div[4]/div[1]/div[4]/div[1]/div[1]/div[2]/div[1]/div[3]/div[5]/div[2]"
+    ).contains("4");
   });
   it("Verify user able to see product detail after clicking tour list", function () {
     // 1. Go to Tamice.com

@@ -1,6 +1,11 @@
 /// <reference types="Cypress" />
 
 describe("Verify 'My Account' page functionalities", function () {
+  beforeEach(() => {
+    // run these tests as if in a desktop
+    // browser with a 720p monitor
+    cy.viewport(1280, 720)
+  })
   it("Verify user able to edit profile", function () {
     // 1. Go to Tamice.com
     // 2. Click human icon
