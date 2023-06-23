@@ -66,6 +66,7 @@ describe("Verify 'Cart' page functionalities", function () {
       "//body[1]/div[1]/div[1]/div[4]/div[1]/div[4]/div[1]/div[1]/div[2]/div[1]/div[3]/div[5]/div[2]"
     ).contains("4");
   });
+
   it("Verify user able to see product detail after clicking tour list", function () {
     // 1. Go to Tamice.com
     // 2. Hove over 'Package Tour' from the navigation bar
@@ -75,6 +76,7 @@ describe("Verify 'Cart' page functionalities", function () {
     // 6. Click tour list
     // 7. Verify user able to see product detail
   });
+
   it("Verify user able to continue checkout", function () {
     // 1. Go to Tamice.com
     // 2. Hove over 'Package Tour' from the navigation bar
@@ -83,6 +85,7 @@ describe("Verify 'Cart' page functionalities", function () {
     // 5. Go to 'Cart' page
     // 6. Click Proceed Checkout
   });
+
   it("Verify user able to checkout as guest", function () {
     // 1. Go to Tamice.com
     // 2. Hove over 'Package Tour' from the navigation bar
@@ -93,6 +96,7 @@ describe("Verify 'Cart' page functionalities", function () {
     // 7. Click 'Guest Checkout' button
     // 8. Click 'Proceed Checkout' button
   });
+  
   it("Verify user able to checkout with valid credit/debit card", function () {
     // 1. Go to Tamice.com
     // 2. Hove over 'Package Tour' from the navigation bar

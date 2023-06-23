@@ -6,6 +6,7 @@ describe("Verify 'Landing' page functionalities", function () {
     // browser with a 720p monitor
     cy.viewport(1280, 720);
   });
+
   it("Verify 'Home' button on landing page redirected to 'Home' page", function () {
     //1. Go to Tamice.com
     cy.visit(Cypress.env("url"));
@@ -20,6 +21,7 @@ describe("Verify 'Landing' page functionalities", function () {
       "Must See in New York"
     );
   });
+
   it("Verify 'NY Big Apple Pass' button on landing page redirected to 'NY Big Apple Pass' page", function () {
     //1. Go to Tamice.com
     cy.visit(Cypress.env("url"));
@@ -34,6 +36,7 @@ describe("Verify 'Landing' page functionalities", function () {
       "//body/div[@id='root']/div[1]/div[4]/div[1]/div[4]/div[1]/span[1]"
     ).contains("Big Apple Pass");
   });
+
   it("Verify 'Observation' button on landing page redirected to 'Observation' page", function () {
     //1. Go to Tamice.com
     cy.visit(Cypress.env("url"));
@@ -48,6 +51,7 @@ describe("Verify 'Landing' page functionalities", function () {
       "//body/div[@id='root']/div[1]/div[4]/div[1]/div[4]/div[1]/span[1]"
     ).contains("Scenics");
   });
+
   it("Verify 'Musicals & Shows' button on landing page redirected to 'Musicals & Shows' page", function () {
     //1. Go to Tamice.com
     cy.visit(Cypress.env("url"));
@@ -60,10 +64,19 @@ describe("Verify 'Landing' page functionalities", function () {
       "//body/div[@id='root']/div[1]/div[4]/div[1]/div[4]/div[1]/span[1]"
     ).contains("Broadway Musicals / Shows");
   });
+
   it("Verify '여행정보' button on landing page redirected to '여행정보' page", function () {
     // 1. Go to Tamice.com
+    cy.visit(Cypress.env("url"));
     // 2. Click '여행정보' button
+    cy.xpath("//body/div[@id='root']/div[1]/div[2]/div[2]/div[2]")
+      .contains("여행정보")
+      .click();
+    // 3. Verify user able to land "여행정보" page
+    /** Wait until 여행정보 page */
+    // cy.url().should("include", "/여행정보");
   });
+
   it("Verify 'About Us' button on landing page redirected to 'About Us' page", function () {
     //1. Go to Tamice.com
     cy.visit(Cypress.env("url"));
@@ -74,6 +87,7 @@ describe("Verify 'Landing' page functionalities", function () {
       "Why Tour With Us?"
     );
   });
+
   it("Verify 'Guide Tour' button on landing page redirected to 'Guide Tour' page", function () {
     //1. Go to Tamice.com
     cy.visit(Cypress.env("url"));
@@ -93,13 +107,16 @@ describe("Verify 'Landing' page functionalities", function () {
       "//body/div[@id='root']/div[1]/div[4]/div[1]/div[4]/div[1]/span[1]"
     ).contains("Manhattan day");
   });
+
   it("Verify 'Cart' button on landing page redirected to 'Cart' page", function () {
     //1. Go to Tamice.com
     cy.visit(Cypress.env("url"));
     //2. Click 'Cart' button
     cy.contains("Cart").click();
     //3. Verify user redirected to 'Cart'page
+    cy.url().should("include", "/cart");
   });
+
   it("Verify 'Login' button on landing page redirected to 'Login' page", function () {
     //1. Go to Tamice.com
     cy.visit(Cypress.env("url"));
@@ -108,6 +125,7 @@ describe("Verify 'Landing' page functionalities", function () {
     //3. Verify user redirected to 'Login'page
     cy.url().should("include", "user/log-in");
   });
+
   it("Verify 'Sign Up' button on landing page redirected to 'Sign Up' page", function () {
     //1. Go to Tamice.com
     cy.visit(Cypress.env("url"));
@@ -145,17 +163,25 @@ describe("Verify 'Landing' page functionalities", function () {
     cy.get("img[alt='/ticket-site/assets/icons/profile.svg']").click();
     // 3. Click 'My booking' button under 'My Account' list
     cy.xpath("//body/div[@id='root']/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]")
-      .contains("My Account")
+      .contains("My Bookings")
       .click();
     // 4. Verify user able to land 'My Bookings' page after click 'My Booking' button under 'My Account' lists
-    cy.url().should("include", "/user/my-account");
+    cy.url().should("include", "/my-bookings");
   });
+
   it("Verify user able to land 'My Account' page after click 'My Account' button", function () {
     // 1. Go to Tamice.com
+    cy.visit(Cypress.env("url"));
     // 2. Click human icon
+    cy.get("img[alt='/ticket-site/assets/icons/profile.svg']").click();
     // 3. Click 'My booking' button under 'My Account' list
+    cy.xpath("//body/div[@id='root']/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]")
+      .contains("My Account")
+      .click();
     // 4. Verify user able to land 'My Account' page after click 'My Account' link
+    cy.url().should("include", "/user/my-account");
   });
+
   it("Verify sign out functionality", function () {
     // 1. Go to Tamice.com
     // 2. Click 'Login/Sign up' button
