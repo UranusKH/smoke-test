@@ -11,15 +11,9 @@ describe("Verify 'Landing' page functionalities", function () {
     //1. Go to Tamice.com
     cy.visit(Cypress.env("url"));
     //2. Click Home button from the navigation bar
-    cy.contains("Home")
-      .click({
-        force: true,
-      })
-      .should("have.text", "Home");
+    cy.contains("Home").click({ force: true });
     //3. Verify Home button on landing page redirect to Home page
-    cy.xpath("//body/div[@id='root']/div[1]/div[5]/div[1]").contains(
-      "Must See in New York"
-    );
+    cy.contains("Must See in New York").should("exist");
   });
 
   it("Verify 'NY Big Apple Pass' button on landing page redirected to 'NY Big Apple Pass' page", function () {
@@ -28,13 +22,9 @@ describe("Verify 'Landing' page functionalities", function () {
     //2. Hover over "Package Tour" button
     cy.contains("Package Tour").invoke("show");
     // get first li from the hidden box
-    cy.get("li").contains("NY Big Apple Pass").click({
-      force: true,
-    });
+    cy.get("li").contains("NY Big Apple Pass").click({ force: true });
     //4. Verify NY Big Apple Pass button on landing page redirect to NY Big Apple Pass page
-    cy.xpath(
-      "//body/div[@id='root']/div[1]/div[4]/div[1]/div[4]/div[1]/span[1]"
-    ).contains("Big Apple Pass");
+    cy.contains("Big Apple Pass").should("exist");
   });
 
   it("Verify 'Observation' button on landing page redirected to 'Observation' page", function () {
@@ -47,9 +37,7 @@ describe("Verify 'Landing' page functionalities", function () {
       force: true,
     });
     //4. Verify Observations button on landing page redirect to NY Big Apple Pass page
-    cy.xpath(
-      "//body/div[@id='root']/div[1]/div[4]/div[1]/div[4]/div[1]/span[1]"
-    ).contains("Scenics");
+    cy.contains("Scenics").should("exist");
   });
 
   it("Verify 'Musicals & Shows' button on landing page redirected to 'Musicals & Shows' page", function () {
@@ -60,18 +48,14 @@ describe("Verify 'Landing' page functionalities", function () {
       force: true,
     });
     //3. Verify Observations button on landing page redirect to NY Big Apple Pass page
-    cy.xpath(
-      "//body/div[@id='root']/div[1]/div[4]/div[1]/div[4]/div[1]/span[1]"
-    ).contains("Broadway Musicals / Shows");
+    cy.contains("Broadway Musicals / Shows").should("exist");
   });
 
   it("Verify '여행정보' button on landing page redirected to '여행정보' page", function () {
     // 1. Go to Tamice.com
     cy.visit(Cypress.env("url"));
     // 2. Click '여행정보' button
-    cy.xpath("//body/div[@id='root']/div[1]/div[2]/div[2]/div[2]")
-      .contains("여행정보")
-      .click();
+    cy.contains("여행정보").click();
     // 3. Verify user able to land "여행정보" page
     /** Wait until 여행정보 page */
     // cy.url().should("include", "/여행정보");
@@ -83,9 +67,7 @@ describe("Verify 'Landing' page functionalities", function () {
     //2. Click "About Us"
     cy.contains("About Us").click();
     //3. Verify Observations button on landing page redirect to NY Big Apple Pass page
-    cy.xpath("//body/div[@id='root']/div[1]/div[4]/div[1]/div[2]").contains(
-      "Why Tour With Us?"
-    );
+    cy.contains("Why Tour With Us").should("exist");
   });
 
   it("Verify 'Guide Tour' button on landing page redirected to 'Guide Tour' page", function () {
@@ -93,19 +75,12 @@ describe("Verify 'Landing' page functionalities", function () {
     cy.visit(Cypress.env("url"));
     //2. Hover over "Guid Tour"
     cy.contains("Guide Tour").invoke("show");
-    // cy.xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[2]/button[4]")
-    //   .contains("Manhattan Day Tour")
-    //   .click({
-    //     force: true,
-    //   });
     //3. Click "Manhattan Day Tour" button
     cy.get("li").contains("Manhattan Day Tour").click({
       force: true,
     });
     //4. Verify Observations button on landing page redirect to NY Big Apple Pass page
-    cy.xpath(
-      "//body/div[@id='root']/div[1]/div[4]/div[1]/div[4]/div[1]/span[1]"
-    ).contains("Manhattan day");
+    cy.contains("Manhattan day").should("exist");
   });
 
   it("Verify 'Cart' button on landing page redirected to 'Cart' page", function () {
@@ -115,6 +90,7 @@ describe("Verify 'Landing' page functionalities", function () {
     cy.contains("Cart").click();
     //3. Verify user redirected to 'Cart'page
     cy.url().should("include", "/cart");
+    cy.contains("Shopping Cart").should("exist");
   });
 
   it("Verify 'Login' button on landing page redirected to 'Login' page", function () {
@@ -150,44 +126,63 @@ describe("Verify 'Landing' page functionalities", function () {
     //2. Click "Contact Us"
     cy.contains("Contact Us").click();
     //3. Verify Observations button on landing page redirect to NY Big Apple Pass page
-    cy.xpath("//body/div[@id='root']/div[1]/div[4]/div[1]/div[2]").contains(
-      "Contact Us"
-    );
+    cy.contains("타미스 오피스 찾아 오시는 길").should("exist");
     cy.url().should("include", "/contact");
   });
 
   it("Verify user able to land 'My Bookings' page after click 'My booking' button under 'My Account' list", function () {
     // 1. Go to Tamice.com
     cy.visit(Cypress.env("url"));
-    // 2. Click human icon
-    cy.get("img[alt='/ticket-site/assets/icons/profile.svg']").click();
-    // 3. Click 'My booking' button under 'My Account' list
-    cy.xpath("//body/div[@id='root']/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]")
-      .contains("My Bookings")
-      .click();
-    // 4. Verify user able to land 'My Bookings' page after click 'My Booking' button under 'My Account' lists
+    cy.contains("Login").click();
+    // 2. Login with account]
+    cy.get('input[placeholder="Email"]').type("admin1@gmail.com");
+    cy.get('input[placeholder="Password"]').type("123456");
+    cy.xpath("//button[contains(text(),'Login')]").click();
+    // 3. Click human icon
+    cy.get("img[alt='/ticket-site/assets/icons/profile.svg']")
+      .click()
+      .invoke("show");
+    // 4. Click 'My booking' button under 'My Account' list
+    cy.contains("My Bookings").click();
+    // 5. Verify user able to land 'My Bookings' page after click 'My Booking' button under 'My Account' lists
     cy.url().should("include", "/my-bookings");
   });
 
   it("Verify user able to land 'My Account' page after click 'My Account' button", function () {
     // 1. Go to Tamice.com
     cy.visit(Cypress.env("url"));
-    // 2. Click human icon
-    cy.get("img[alt='/ticket-site/assets/icons/profile.svg']").click();
+    // 2. Login with account]
+    cy.contains("Login").click();
+    cy.get('input[placeholder="Email"]').type("admin1@gmail.com");
+    cy.get('input[placeholder="Password"]').type("123456");
+    cy.xpath("//button[contains(text(),'Login')]").click();
     // 3. Click 'My booking' button under 'My Account' list
-    cy.xpath("//body/div[@id='root']/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]")
-      .contains("My Account")
-      .click();
+    cy.get("img[alt='/ticket-site/assets/icons/profile.svg']")
+      .click()
+      .invoke("show");
+    cy.contains("My Account").click();
     // 4. Verify user able to land 'My Account' page after click 'My Account' link
     cy.url().should("include", "/user/my-account");
   });
 
   it("Verify sign out functionality", function () {
     // 1. Go to Tamice.com
-    // 2. Click 'Login/Sign up' button
+    cy.visit(Cypress.env("url"));
+    // 2. Click 'Login' button
+    cy.xpath("//body/div[@id='root']/div[2]/div[2]/div[2]/div[1]")
+      .contains("Login")
+      .click();
     // 3. Type valid credential
+    cy.get('input[placeholder="Email"]').type("admin1@gmail.com");
+    cy.get('input[placeholder="Password"]').type("123456");
     // 4. Click 'Login' button
+    cy.xpath("//button[contains(text(),'Login')]").click();
     // 5. Click human icon button
-    // 6. Click 'Sign out' button s
+    cy.get("img[alt='/ticket-site/assets/icons/profile.svg']")
+      .click()
+      .invoke("show");
+    cy.contains("Sign Out").click();
+    // 6. Click 'Sign out' button
+    cy.url().should("include", "/ticket-site");
   });
 });

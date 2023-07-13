@@ -23,3 +23,6 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+import 'cypress-plugin-xhr-toggle'
+// or
+require('cypress-plugin-xhr-toggle')

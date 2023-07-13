@@ -2,6 +2,7 @@ const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
   reporter: "mochawesome",
+  fixturesFolder: false,
   reporterOptions: {
     code: true,
     charts: true,
@@ -14,11 +15,14 @@ module.exports = defineConfig({
     json: true,
   },
   e2e: {
+    setupNodeEvents(on, config) {},
     env: {
       url: "https://thernlovendev.github.io/ticket-site/#/",
+      hideXhr: true
     },
     defaultCommandTimeout: 8000,
     pageLoadTimeout: 15000,
+    watchForFileChanges: false,
 
     setupNodeEvents(on, config) {
       // implement node event listeners here
