@@ -45,11 +45,6 @@ describe("Verify 'Sign up' page functionalities", function () {
     // 6. Click 'Sign Up'
   });
   it("Verify Naver sign up functionality", function () {
-    // 1. Go to Tamice.com
-    // 2. Click 'Login/Sign Up' button
-    // 3. Click 'Don't have an account' button
-    // 4. Click 'Naver sign up' button from Sign up page
-    // 5. Type all valid information
-    // 6. Click 'Sign Up'
+
   });
 });

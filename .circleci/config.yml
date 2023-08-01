@@ -1,8 +1,44 @@
 version: 2.1
-orbs:
-  cypress: cypress-io/cypress@3
-workflows:
+jobs:
   build:
-    jobs:
-      - cypress/run:
-          cypress-command: "npx cypress run"
+    docker:
+      - image: circleci/node:14.17 # Choose an appropriate Node.js version
+    working_directory: ~/repo
+
+    steps:
+      - checkout
+
+      # Install dependencies
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package-lock.json" }}
+            # Add more cache keys if needed
+
+      - run:
+          name: Install Dependencies
+          command: sudo apt update
+
+      - run:
+          name: Install Dependencies
+          command: npm i
+
+      - run:
+          name: Install Dependencies
+          command: yarn install 
+
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package-lock.json" }}
+            # Add more cache keys if needed
+
+      # Run tests using Cypress
+      - run:
+          name: Run Cypress Tests
+          command: npx cypress run 
+      - run:
+          command: |
+            npm install --save-dev cypress-multi-reporters mocha-junit-reporter
+            cypress run --reporter cypress-multi-reporters --reporter-options configFile=reporter-config.json 
+      - store_test_results:
+          path: cypress/test-results/mocha
