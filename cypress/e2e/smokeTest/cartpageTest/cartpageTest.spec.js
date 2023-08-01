@@ -163,9 +163,7 @@ describe("Verify 'Cart' page functionalities", function () {
     cy.url().should("include", "/cart?guestCheckout=true");
     // 3. Click 'NY Big Apple Pass'
     // 4. Add products
-    // 5. Go to Cart Page
-    // 6. Click 'Proceed Checkout' button
-    // 7. Click 'Guest Checkout' button
+
     // 8. Click 'Proceed Checkout' button
   });
 
