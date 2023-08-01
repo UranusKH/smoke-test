@@ -16,11 +16,19 @@ jobs:
 
       - run:
           name: Install Dependencies
+          command: sudo apt update
+
+      - run:
+          name: Install Dependencies
+          command: sudo apt install libnss3
+      - run:
+          name: Install Dependencies
           command: npm i
 
       - run:
           name: Install Dependencies
           command: yarn install 
+
       - save_cache:
           paths:
             - node_modules
