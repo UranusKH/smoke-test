@@ -1,34 +1,24 @@
-name: Run tests
+name: Unit Tests
 
-on:
-  push: 
-    branches:
-     -'main'
-    pull_request:
-      branches:
-      - 'main'
+on: [pull_request]
+
+jobs: 
+  tests: 
+      runs-on: ubuntu-latest
+
+      strategy:
+        matrix:
+          node-version: [18.x, 16.x]
 
 
-jobs:
-  tests:
-    runs-on: ubuntu-latest
+      steps: 
+        - uses: actions/checkout@v2
+        - name: Use Node.js ${{ matrix.node-version }}
+          uses: actions/setup-node@v1
+          with:
+            node-version: ${{ matrix.node-version }}
 
-    steps:
-     - name: Checkout
-       uses: actions/checkout@v2
-     - name: Setup Node 
-       uses: actions/setup-node@v2
-       with: 
-        node-version: 18.7.0
-     - name: Install Dependencies 
-       run: npm ci 
-     - name: Run tests 
-       run: npm test
-     - name: Generate report
-       run:
-        command: |
-          npm install --save-dev cypress-multi-reporters mocha-junit-reporter
-          cypress run --reporter cypress-multi-reporters --reporter-options configFile=reporter-config.json ...<other options>
-     - store_test_results:
-        path: /Users/kilhochang/Desktop/testScript/regressionTest/cypress/test-results
-
+        - name: npm install 
+          run: npm ci 
+        - name: tests 
+          run : npm test
