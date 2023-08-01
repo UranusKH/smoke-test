@@ -27,7 +27,7 @@ jobs:
       # Run tests using Cypress
       - run:
           name: Run Cypress Tests
-          command: npm run test:e2e
+          command: npm run test
       - run:
           command: |
             npm install --save-dev cypress-multi-reporters mocha-junit-reporter
