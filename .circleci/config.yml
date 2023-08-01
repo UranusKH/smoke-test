@@ -6,3 +6,10 @@ workflows:
     jobs:
       - cypress/run:
           cypress-command: "npx cypress run"
+      - run:
+          command: |
+            npm install --save-dev cypress-multi-reporters mocha-junit-reporter
+            cypress run --reporter cypress-multi-reporters --reporter-options configFile=reporter-config.json 
+      - store_test_results:
+          path: results.xml
+
